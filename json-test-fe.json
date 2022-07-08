@@ -1,34 +1,39 @@
 {
     "detail": [
         {
+            "id": 1,
             "jam": "03:15",
-            "tanggal":"18 Februari 2021",
-            "nama":"Ayam Tangkap",
-            "pengeluaraan":77249
+            "tanggal": "18 Februari 2021",
+            "nama": "Ayam Tangkap",
+            "pengeluaraan": 77249
         },
         {
+            "id": 2,
             "jam": "03:15",
-            "tanggal":"18 Februari 2021",
-            "nama":"Mie Rebus",
-            "pengeluaraan":32154
+            "tanggal": "18 Februari 2021",
+            "nama": "Mie Rebus",
+            "pengeluaraan": 32154
         },
         {
+            "id": 3,
             "jam": "00:20",
-            "tanggal":"17 Februari 2021",
-            "nama":"Soto Kuning",
-            "pengeluaraan":34992
+            "tanggal": "17 Februari 2021",
+            "nama": "Soto Kuning",
+            "pengeluaraan": 34992
         },
         {
+            "id": 4,
             "jam": "05:59",
-            "tanggal":"17 Februari 2021",
-            "nama":"Ayam Geprek",
-            "pengeluaraan":37674
+            "tanggal": "17 Februari 2021",
+            "nama": "Ayam Geprek",
+            "pengeluaraan": 37674
         },
         {
+            "id": 5,
             "jam": "05:45",
-            "tanggal":"16 Februari 2021",
-            "nama":"Otak-otak",
-            "pengeluaraan":11971
+            "tanggal": "16 Februari 2021",
+            "nama": "Otak-otak",
+            "pengeluaraan": 11971
         }
     ]
 }

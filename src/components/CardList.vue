@@ -1,5 +1,7 @@
 <template>
   <div
+    v-for="date in tanggal"
+    :key="date"
     class="
       col-lg-4 col-md-6 col-sm-12
       mb-3
@@ -8,18 +10,19 @@
       justify-content-center
     "
   >
-    <div class="card" width="100%">
-      <b class="card-header">18 Februari</b>
+    <div class="card" style="width: 100%">
+      <b class="card-header">
+        {{ date.split(" ")[0] }}
+        {{ date.split(" ")[1] }}
+      </b>
       <div class="card-body">
         <p class="card-text">
-          <CardItems />
-          <CardItems />
-          <CardItems />
+          <CardItems :date="date" />
         </p>
       </div>
       <div class="card-footer d-flex flex-row-reverse">
         <small>
-          <b>Total <span>Rp. [Rupiah]</span></b>
+          <TotalPerDay :date="date" />
         </small>
       </div>
     </div>
@@ -27,9 +30,19 @@
 </template>
 
 <script>
+import { computed } from "@vue/runtime-core";
+import { useStore } from "vuex";
 import CardItems from "./CardItems.vue";
+import TotalPerDay from "./TotalPerDay.vue";
+
 export default {
-  components: { CardItems },
+  components: { CardItems, TotalPerDay },
+  setup() {
+    const store = useStore();
+    const tanggal = computed(() => store.getters.getDates);
+
+    return { tanggal };
+  },
 };
 </script>
 

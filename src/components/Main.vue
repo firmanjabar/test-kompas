@@ -1,19 +1,21 @@
 <template>
-  <div class="container">
+  <div class="container mb-5">
     <div class="row">
-      <!-- Card -->
       <CardList />
-      <CardList />
-      <CardList />
-      <!-- End Card -->
     </div>
   </div>
 </template>
 
 <script>
+import { useStore } from "vuex";
 import CardList from "./CardList.vue";
+
 export default {
   components: { CardList },
+  setup() {
+    const store = useStore();
+    store.dispatch("fetchDetails");
+  },
 };
 </script>
 
