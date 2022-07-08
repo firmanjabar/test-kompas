@@ -1,14 +1,4 @@
-# test-kompas
-
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+# Test Bidang Front End - Kompas.id
 
 ## Project Setup
 
@@ -22,8 +12,34 @@ npm install
 npm run dev
 ```
 
+run on http://localhost:3001/
+
 ### Compile and Minify for Production
 
 ```sh
 npm run build
 ```
+
+## Install json-server
+
+```sh
+npm install -g json-server
+```
+
+### Run json-server
+
+```sh
+json-server json-test-fe.json
+```
+
+run on http://localhost:3000/
+
+
+## Tools
+
+1. VueJS (Framework JS)
+2. Vuex (State Management)
+3. Bootstrap
+4. typicode/json-server
+5. Axios
+6. Fontawesome
