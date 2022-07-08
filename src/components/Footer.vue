@@ -3,9 +3,15 @@
     <small>
       coded with
       <font-awesome-icon icon="fa-regular fa-heart" style="color: red" />
-      firman abdul jabar
+      <a class="styleLink" href="https://firmanjabar.my.id" target="_blank">
+        firman abdul jabar
+      </a>
       <br />
-      <a href="" class="styleLink">
+      <a
+        href="https://github.com/firmanjabar/test-kompas"
+        class="styleLink"
+        target="_blank"
+      >
         <font-awesome-icon icon="fa-brands fa-github" /> source code
       </a>
     </small>
