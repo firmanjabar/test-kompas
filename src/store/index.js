@@ -3,12 +3,12 @@ import { createStore } from 'vuex'
 
 const store = createStore({
     state: {
-        details: [],
-        tanggal: [],
+        details: JSON.parse(localStorage.getItem('details')) || [],
+        tanggal: JSON.parse(localStorage.getItem('tanggal')) || [],
         thisMonth: new Date().toLocaleString('id-ID', { month: 'long' }),
         thisYear: new Date().getFullYear(),
-        totalPerDay: [],
-        spentThisMonth: 0
+        totalPerDay: JSON.parse(localStorage.getItem('totalPerDay')) || [],
+        spentThisMonth: JSON.parse(localStorage.getItem('spentThisMonth')) || 0
     },
     mutations: {
         setDetails(state, data) {
@@ -30,9 +30,11 @@ const store = createStore({
                 pengeluaraan: price,
             }
             const newDetails = [data, ...state.details];
+            localStorage.setItem('details', JSON.stringify(newDetails))
             state.details = newDetails
 
             const date = [...new Set(newDetails.map(data => data.tanggal))]
+            localStorage.setItem('tanggal', JSON.stringify(date))
             state.tanggal = date
 
             let total = 0;
@@ -44,6 +46,7 @@ const store = createStore({
             const tempObj = [...state.totalPerDay, { total, date: tanggal }]
             const uniqDate = tempObj.map(o => o.date)
             const finalTotalPerDay = tempObj.filter(({ date }, index) => !uniqDate.includes(date, index + 1))
+            localStorage.setItem('totalPerDay', JSON.stringify(finalTotalPerDay))
             state.totalPerDay = finalTotalPerDay
         },
         setTotalPerDay(state, date) {
@@ -56,6 +59,7 @@ const store = createStore({
                         data[i] = total;
                     }
                 });
+
                 state.totalPerDay.push({ total: data[i], date: date[i] })
                 total = 0;
             }
@@ -70,17 +74,18 @@ const store = createStore({
                     total += data.pengeluaraan
                 }
             })
+            localStorage.setItem('spentThisMonth', JSON.stringify(total))
             state.spentThisMonth = total
         }
     },
     actions: {
         async fetchDetails({ commit }) {
-            const res = await axios.get("http://localhost:3000/detail")
-            const date = [...new Set(res.data.map(data => data.tanggal))]
-            commit('setTanggal', date)
-            commit('setDetails', res.data)
-            commit('setSpentThisMonth')
-            commit('setTotalPerDay', date)
+            // const res = await axios.get("http://localhost:3000/detail")
+            // const date = [...new Set(res.data.map(data => data.tanggal))]
+            // commit('setTanggal', date)
+            // commit('setDetails', res.data)
+            // commit('setSpentThisMonth')
+            // commit('setTotalPerDay', date)
         },
     },
     getters: {

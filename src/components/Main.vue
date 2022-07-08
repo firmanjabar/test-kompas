@@ -14,7 +14,7 @@ export default {
   components: { CardList },
   setup() {
     const store = useStore();
-    store.dispatch("fetchDetails");
+    // store.dispatch("fetchDetails");
   },
 };
 </script>
