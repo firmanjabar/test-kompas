@@ -43,3 +43,15 @@ run on http://localhost:3000/
 4. typicode/json-server
 5. Axios
 6. Fontawesome
+
+---
+
+Check this website online: https://track-ur-jajan.netlify.app/
+
+Kodingan website yang dihosting agak berbeda dengan soal yang diberikan karena tidak meload data dari JSON dan penambahan fitur localStorage.
+
+Kodingan untuk hosting ada di `branch - hosting`
+
+---
+
+Kodingan untuk test [Kompas.id](https://kompas.id) ada di `branch - master` 
